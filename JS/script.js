@@ -4,7 +4,7 @@ const cenario = document.getElementById("cenario");
 const nave = document.getElementById("nave");
 const vida = document.getElementById("vida");
 const pontos = document.getElementById("pontos");
-const audioJogo = new Audio("/audio/Speak.mp3");
+const audioJogo = new Audio("/audio/3HR.MT_.3.mp3");
 
 const larguraCenario = cenario.offsetWidth;
 const alturaCenario = cenario.offsetHeight;
@@ -14,7 +14,7 @@ const alturaNave = nave.offsetHeight;
 
 const velocidadeNave = 40;
 const velocidadeTiro = 20;
-const velocidadeNaveInimigas = 5;
+const velocidadeNaveInimigas = 8;
 
 let estaAtirando = false;
 
@@ -117,6 +117,7 @@ const audioTiros = () => {
     const audioDoTiro = document.createElement("audio");
     audioDoTiro.className = "audiotiro"
     audioDoTiro.setAttribute("src", "audio/shotLaser.mp3");
+    audioDoTiro.volume = 0.5;
     audioDoTiro.play();
     cenario.appendChild(audioDoTiro);
     audioDoTiro.addEventListener("ended", () => {
@@ -248,6 +249,7 @@ const audioExplosoes = () => {
     const audioExplosaoNaveInimiga = document.createElement("audio");
     audioExplosaoNaveInimiga.className = "audioExplosaoNaveInimiga"
     audioExplosaoNaveInimiga.setAttribute("src", "audio/explosaoVindo.mp3");
+  
     audioExplosaoNaveInimiga.play();
     cenario.appendChild(audioExplosaoNaveInimiga);
     audioExplosaoNaveInimiga.addEventListener("ended", () => {
